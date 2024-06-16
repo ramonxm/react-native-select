@@ -26,12 +26,13 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace react-native-select-example",
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
     "prepare": "bob build",
+    "example": "yarn --cwd example",
+    "bootstrap": "yarn install && yarn example",
     "release": "release-it"
   },
   "keywords": [
@@ -79,10 +80,6 @@
     "react": "*",
     "react-native": "*"
   },
-  "workspaces": [
-    "example"
-  ],
-  "packageManager": "yarn@3.6.1",
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
@@ -155,5 +152,8 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "@gorhom/portal": "^1.0.14"
   }
 }
